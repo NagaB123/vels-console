@@ -1,0 +1,87 @@
+/* src/components/Navbar.css */
+.navbar {
+  background: linear-gradient(90deg, #2575fc 100%, #303e51 0%);
+  padding: 0.5rem 2rem;
+  box-shadow: 0 2px 8px rgba(38, 38, 38, 0.15);
+  font-family: 'Roboto', sans-serif;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+
+.nav-list > li {
+  position: relative;
+  margin-right: 2rem;
+}
+
+.nav-list a, .nav-list span {
+  color: #fff;
+  text-decoration: none;
+  padding: 0.6rem 1.2rem;
+  display: flex;
+  align-items: center;
+  font-size: 1.08rem;
+  border-radius: 6px;
+  transition: background 0.2s, transform 0.2s;
+  gap: 0.5rem;
+}
+
+.nav-list a:hover, .nav-list span:hover {
+  background: rgba(255,255,255,0.18);
+  transform: translateY(-2px) scale(1.04);
+}
+
+.has-submenu > span::after {
+  content: " ▼";
+  font-size: 0.75em;
+}
+
+.has-submenu:hover .submenu,
+.has-submenu:focus-within .submenu {
+  display: block;
+}
+
+.submenu {
+  display: none;
+  position: absolute;
+  background: #fff;
+  margin: 0;
+  padding: 0.5rem 0;
+  list-style: none;
+  top: 110%;
+  left: 0;
+  min-width: 180px;
+  box-shadow: 0 4px 12px rgba(38,38,38,0.15);
+  border-radius: 8px;
+}
+
+.submenu li a {
+  color: #333;
+  padding: 0.6rem 1.2rem;
+  background: none;
+  font-size: 1rem;
+  border-radius: 6px;
+  transition: background 0.2s, color 0.2s;
+}
+
+.submenu li a:hover {
+  background: #2575fc;
+  color: #fff;
+  transform: translateX(6px);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .nav-list {
+    flex-direction: column;
+  }
+  .nav-list > li {
+    margin-right: 0;
+    margin-bottom: 1rem;
+  }
+}
